@@ -1,4 +1,4 @@
-import pytest  # Обязательно импортируем pytest
+import pytest
 from selenium import webdriver
 
 class WebdriverFactory:

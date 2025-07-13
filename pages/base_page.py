@@ -115,3 +115,10 @@ class BasePage:
             EC.visibility_of_element_located(locator)
         )
         return self.driver.find_element(*locator)
+
+    def is_element_present(self, locator, timeout=7):
+        try:
+            WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(locator))
+            return True
+        except TimeoutException:
+            return False
